@@ -1,47 +1,23 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true
-#script: mvn test
+# script
 script: mvn -DskipTests=true clean package
-
 notification:
   email:
     recipients:
-      - jiangyj0561@outlook.com
+    - jiangyj0561@outlook.com
     on_success: always
     on_failure: always
-
 before_script:
-  - echo "MAVEN_OPTS='-Xms1024m -Xmx2048m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m'" > ~/.mavenrc
-  
-before_install:
-  - pip install --user codecov
-
-after_success:
-  - mvn clean test jacoco:report coveralls:report
-  - codecov
-
+- echo "MAVEN_OPTS='-Xms1024m -Xmx2048m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m'" > ~/.mavenrc
 branches:
   only:
-    - master
-    
+  - master
 env:
   global:
-    - "MAVEN_OPTS=-Xms1024m -Xmx2048m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m"
-
-addons:
-  coverity_scan:
-    project:
-      name: "Ruffianjiang / xxl-job-springboot"
-      description: "Build submitted via Travis CI"
-    notification_email: jiangyj0561@outlook.com
-    build_command_prepend: "mvn clean"
-    build_command: "mvn -DskipTests=true compile"
-    branch_pattern: master
-
+  - MAVEN_OPTS=-Xms1024m -Xmx2048m -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=384m
 cache:
   directories:
-    - $HOME/.m2
-
-
+  - $HOME/.m2
