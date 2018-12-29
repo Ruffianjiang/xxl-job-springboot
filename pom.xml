@@ -30,6 +30,7 @@
 
 		<!--<javax.servlet-api.version>3.1.0</javax.servlet-api.version> <javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version> -->
 		<xxl-rpc.version>1.2.1</xxl-rpc.version>
+		<xxl-job.version>2.0.1</xxl-job.version>
 
 		<spring-boot.version>2.1.1.RELEASE</spring-boot.version>
 		<spring-cloud.version>Finchley.SR1</spring-cloud.version>
