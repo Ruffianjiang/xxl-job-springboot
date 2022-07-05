@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>com.dawn</groupId>
 		<artifactId>xxljob</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>0.0.1</version>
 	</parent>
 	<artifactId>xxljob-eureka</artifactId>
 	<name>xxljob-eureka</name>
